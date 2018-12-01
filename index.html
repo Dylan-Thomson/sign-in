@@ -85,14 +85,14 @@
     $("#add-user").on("click", function(event) {
       event.preventDefault();
 
+      // NOTE: We could replace localStorage with sessionStorage, which disappears when tab is closed
+
       localStorage.clear();
       localStorage.setItem("name", $("#name-input").val().trim());
       localStorage.setItem("email", $("#email-input").val().trim());
       localStorage.setItem("age", $("#age-input").val().trim());
       localStorage.setItem("comment", $("#comment-input").val().trim());
 
-      // Console log each of the user inputs to confirm we are receiving them correctly
-      console.log(localStorage);
       // Output all of the new information into the relevant HTML sections
       $("#name-display").text(localStorage.getItem("name"));
       $("#email-display").text(localStorage.getItem("email"));
